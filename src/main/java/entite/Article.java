@@ -3,6 +3,8 @@ package entite;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -16,8 +18,11 @@ public class Article {
 	private String designation;
 	@Column(name = "Prix", nullable = false)
 	private float prix;
-	@Column(name = "ID_FOU", nullable = false)
-	private Integer id_fou;
+	
+	@ManyToOne
+	@JoinColumn(name = "ID_FOU")
+	private Fournisseur fournisseur ;
+	
 	public Article() {
 	}
 

@@ -19,10 +19,8 @@ public class Fournisseur {
 	private Integer id;
 	@Column(name = "NOM", length = 30, nullable = false, unique = true)
 	private String nom;
-	
 	@OneToMany(mappedBy="fournisseur")
 	private Set<BonCommande> bons;
-	
 	@OneToMany(mappedBy="fournisseur")
 	private Set<Article> articles;
 	

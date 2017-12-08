@@ -1,6 +1,7 @@
 package test;
 
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import entite.Article;
+import entite.BonCommande;
 
 public class TestJpa {
 	private static final Logger LOG = LoggerFactory.getLogger(TestJpa.class);
@@ -20,13 +22,19 @@ public class TestJpa {
 		EntityManager em = entityManagerFactory.createEntityManager();
 		
 		
-		TypedQuery<Article> query2 = em.createQuery("select a from Article a", Article.class);
-		if (query2 != null) {
-			List<Article> articles = query2.getResultList();
+		TypedQuery<Article> query = em.createQuery("select a from Article a", Article.class);
+		if (query != null) {
+			List<Article> articles = query.getResultList();
 			LOG.info("le nombre article est"+articles.size());
-			
-			
 		}
+		
+		TypedQuery<BonCommande> query1 = em.createQuery("FROM BonCommande b WHERE numero =2", BonCommande.class);
+		BonCommande bon = query1.getResultList().get(0);
+		Set<Article> articles = bon.getArticles();
+		for(Article article : articles) {
+			LOG.info(article.getDesignation());
+		}
+		
 		
 		em.close();
 		entityManagerFactory.close();

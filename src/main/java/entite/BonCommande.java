@@ -37,6 +37,55 @@ public class BonCommande {
 	private Fournisseur fournisseur ;
 
 	public BonCommande() {
+		
+	}
+
+	public Set<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getNunmero() {
+		return nunmero;
+	}
+
+	public void setNunmero(Integer nunmero) {
+		this.nunmero = nunmero;
+	}
+
+	public LocalDate getDate_cmde() {
+		return date_cmde;
+	}
+
+	public void setDate_cmde(LocalDate date_cmde) {
+		this.date_cmde = date_cmde;
+	}
+
+	public Integer getDelai() {
+		return delai;
+	}
+
+	public void setDelai(Integer delai) {
+		this.delai = delai;
+	}
+
+	public Fournisseur getFournisseur() {
+		return fournisseur;
+	}
+
+	public void setFournisseur(Fournisseur fournisseur) {
+		this.fournisseur = fournisseur;
 	}
 
 }

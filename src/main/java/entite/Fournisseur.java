@@ -29,4 +29,36 @@ public class Fournisseur {
 		articles = new HashSet<Article>();
 	}
 
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public Set<BonCommande> getBons() {
+		return bons;
+	}
+
+	public void setBons(Set<BonCommande> bons) {
+		this.bons = bons;
+	}
+
+	public Set<Article> getArticles() {
+		return articles;
+	}
+
+	public void setArticles(Set<Article> articles) {
+		this.articles = articles;
+	}
+
 }
